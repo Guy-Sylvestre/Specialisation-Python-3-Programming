@@ -1,0 +1,36 @@
+
+
+À ce stade, vous devriez être en mesure d'examiner les fonctions complètes et de dire ce qu'elles font. De plus, si vous avez fait les exercices, vous avez écrit quelques petites fonctions. Lorsque vous écrivez des fonctions plus volumineuses, vous pourriez commencer à avoir plus de difficultés, en particulier avec les erreurs d'exécution et sémantiques.
+Pour faire face à des programmes de plus en plus complexes, nous allons proposer une technique appelée développement incrémental . Le but du développement incrémentiel est d'éviter de longues sessions de débogage en ajoutant et en testant seulement une petite quantité de code à la fois.
+Si vous écrivez des tests unitaires avant de faire le développement incrémentiel, vous pourrez suivre votre progression à mesure que le code passe de plus en plus de tests. Vous pouvez également écrire des tests supplémentaires à chaque étape du développement incrémentiel.
+Ensuite, vous serez en mesure de vérifier si une modification de code que vous apportez à un stade ultérieur du développement empêche l'un des tests précédents, qui passaient auparavant, de ne plus réussir.
+
+
+
+
+
+
+
+Par exemple, supposons que vous souhaitiez trouver la distance entre deux points, donnée par les coordonnées (x 1 , y 1 ) et (x 2 , y 2 ). D'après le théorème de Pythagore, la distance est:
+Formule de distance
+La première étape consiste à considérer à quoi distancedevrait ressembler une fonction en Python. En d'autres termes, quelles sont les entrées (paramètres) et quelle est la sortie (valeur de retour)?
+Dans ce cas, les deux points sont les entrées, que nous pouvons représenter à l'aide de quatre paramètres. La valeur de retour est la distance, qui est une valeur à virgule flottante.
+Déjà, nous pouvons écrire un aperçu de la fonction qui capture jusqu'à présent notre réflexion.
+def distance(x1, y1, x2, y2):
+    return None
+Évidemment, cette version de la fonction ne calcule pas les distances; il renvoie toujours None. Mais il est syntaxiquement correct et il fonctionnera, ce qui signifie que nous pouvons le tester avant de le rendre plus compliqué.
+
+
+
+
+
+
+
+
+
+Lorsque vous démarrez, vous pouvez ajouter seulement une ou deux lignes de code à la fois. Au fur et à mesure que vous gagnerez en expérience, vous pourriez vous retrouver à écrire et à déboguer des blocs conceptuels plus importants. Au fur et à mesure que vous améliorez vos compétences en programmation, vous devriez vous retrouver à gérer des morceaux de plus en plus gros: c'est très similaire à la façon dont nous avons appris à lire des lettres, des syllabes, des mots, des phrases, des phrases, des paragraphes, etc., ou à la façon dont nous apprenons à découper de la musique. - des notes individuelles aux accords, mesures, phrases, etc.
+Les principaux aspects du processus sont:
+Assurez-vous de savoir ce que vous essayez d'accomplir. Ensuite, vous pouvez écrire des tests unitaires appropriés.
+Commencez avec un programme squelette fonctionnel et apportez de petites modifications incrémentielles. À tout moment, s'il y a une erreur, vous saurez exactement où elle se trouve.
+Utilisez des variables temporaires pour contenir des valeurs intermédiaires afin de pouvoir les inspecter et les vérifier facilement.
+Une fois que le programme fonctionne, vous souhaiterez peut-être consolider plusieurs instructions en expressions composées, mais ne le faites que si cela ne rend pas le programme plus difficile à lire.

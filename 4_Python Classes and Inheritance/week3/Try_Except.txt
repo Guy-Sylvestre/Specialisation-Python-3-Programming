@@ -1,0 +1,44 @@
+19.1. Qu'est-ce qu'une exception? 
+
+Une exception est un signal indiquant qu'une condition s'est produite qui ne peut pas être facilement gérée à l'aide du flux de contrôle normal d'un programme Python. Les exceptions sont souvent définies comme des «erreurs», mais ce n'est pas toujours le cas. Toutes les erreurs en Python sont traitées à l'aide d' exceptions , mais toutes les exceptions ne sont pas des erreurs.
+
+
+
+
+
+
+19.2. Gestion des exceptions Flow-of-Control 
+
+Pour expliquer ce que fait une exception , passons en revue le «flux de contrôle» normal dans un programme Python. En fonctionnement normal, Python exécute les instructions de manière séquentielle, l'une après l'autre. Pour trois constructions, instructions if, boucles et invocations de fonctions, cette exécution séquentielle est interrompue.
+Pour les instructions if , un seul des plusieurs blocs d'instructions est exécuté, puis le flux de contrôle passe à la première instruction après l'instruction if.
+Pour les boucles , lorsque la fin de la boucle est atteinte, le flux de contrôle revient au début de la boucle et un test est utilisé pour déterminer si la boucle doit s'exécuter à nouveau. Si la boucle est terminée, le flux de contrôle passe à la première instruction après la boucle.
+Pour les appels de fonction , le flux de contrôle passe à la première instruction de la fonction appelée, la fonction est exécutée et le flux de contrôle revient à l'instruction suivante après l'appel de la fonction.
+Voyez-vous le modèle? Si le flux de contrôle n'est pas purement séquentiel, il exécute toujours la première instruction immédiatement après le flux de contrôle modifié. C'est pourquoi nous pouvons dire que le flux de contrôle Python est séquentiel. Mais il y a des cas où ce flux de contrôle séquentiel ne fonctionne pas bien.
+Les exceptions nous fournissent un moyen d'avoir un point non séquentiel où nous pouvons gérer quelque chose qui sort de l'ordinaire (exceptionnel).
+
+
+
+
+
+
+19.2.1. Relever et détecter les erreurs 
+
+La structure de contrôle try / except fournit un moyen de traiter une erreur d'exécution et de poursuivre l'exécution du programme. Jusqu'à présent, toute erreur d'exécution, comme demander le 8ème élément dans une liste avec seulement 3 éléments, ou diviser par 0, a provoqué l'arrêt de l'exécution du programme. Dans les fenêtres ActiveCode du navigateur, vous obtenez un message d'erreur dans une boîte ci-dessous. Lorsque vous exécutez des programmes python à partir de la ligne de commande, vous obtenez également un message d'erreur indiquant ce qui n'a pas fonctionné et sur quelle ligne il s'est produit. Une fois l'erreur d'exécution rencontrée, l'interpréteur python n'essaye pas d'exécuter le reste du code. Vous devez apporter des modifications à votre code et relancer l'ensemble du programme.
+Avec try / except, vous indiquez à l'interpréteur python:
+Essayez d'exécuter un bloc de code, la clause «try».
+Si tout le bloc de code s'exécute sans aucune erreur d'exécution, continuez simplement avec le reste du programme après l'instruction try / except.
+Si une erreur d'exécution se produit lors de l'exécution du bloc de code:
+ignorez le reste de ce bloc de code (mais ne quittez pas tout le programme)
+exécuter un bloc de code dans la clause «except»
+puis continuez avec le reste du programme après l'instruction try / except
+
+
+
+
+
+
+try:
+   <try clause code block>
+except <ErrorType>:
+   <exception handler code block>
+La syntaxe est assez simple. La seule partie délicate est qu'après le mot excepté, il peut éventuellement y avoir une spécification des types d'erreurs qui seront traitées. Le fourre-tout est l'exception de classe. Si vous écrivez, toutes les erreurs d'exécution seront gérées. Si vous spécifiez une classe d'erreurs plus restreinte, seules ces erreurs seront traitées; tout autre type d'erreur entraînera toujours l'arrêt du programme et l'impression d'un message d'erreur.except Exception:
